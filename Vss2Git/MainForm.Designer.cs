@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.vssGroupBox = new System.Windows.Forms.GroupBox();
             this.encodingLabel = new System.Windows.Forms.Label();
             this.encodingComboBox = new System.Windows.Forms.ComboBox();
@@ -48,6 +47,7 @@
             this.changeLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.timeLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.outputGroupBox = new System.Windows.Forms.GroupBox();
+            this.ignoreErrorsCheckBox = new System.Windows.Forms.CheckBox();
             this.commentTextBox = new System.Windows.Forms.TextBox();
             this.commentLabel = new System.Windows.Forms.Label();
             this.forceAnnotatedCheckBox = new System.Windows.Forms.CheckBox();
@@ -67,7 +67,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.anyCommentUpDown = new System.Windows.Forms.NumericUpDown();
-            this.ignoreErrorsCheckBox = new System.Windows.Forms.CheckBox();
             this.vssGroupBox.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.outputGroupBox.SuspendLayout();
@@ -90,7 +89,7 @@
             this.vssGroupBox.Controls.Add(this.vssDirLabel);
             this.vssGroupBox.Location = new System.Drawing.Point(12, 12);
             this.vssGroupBox.Name = "vssGroupBox";
-            this.vssGroupBox.Size = new System.Drawing.Size(560, 126);
+            this.vssGroupBox.Size = new System.Drawing.Size(670, 126);
             this.vssGroupBox.TabIndex = 0;
             this.vssGroupBox.TabStop = false;
             this.vssGroupBox.Text = "VSS Settings";
@@ -112,7 +111,7 @@
             this.encodingComboBox.FormattingEnabled = true;
             this.encodingComboBox.Location = new System.Drawing.Point(94, 97);
             this.encodingComboBox.Name = "encodingComboBox";
-            this.encodingComboBox.Size = new System.Drawing.Size(460, 21);
+            this.encodingComboBox.Size = new System.Drawing.Size(570, 21);
             this.encodingComboBox.TabIndex = 7;
             // 
             // excludeTextBox
@@ -121,7 +120,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.excludeTextBox.Location = new System.Drawing.Point(94, 71);
             this.excludeTextBox.Name = "excludeTextBox";
-            this.excludeTextBox.Size = new System.Drawing.Size(460, 20);
+            this.excludeTextBox.Size = new System.Drawing.Size(570, 20);
             this.excludeTextBox.TabIndex = 5;
             // 
             // excludeLabel
@@ -139,7 +138,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.vssProjectTextBox.Location = new System.Drawing.Point(94, 45);
             this.vssProjectTextBox.Name = "vssProjectTextBox";
-            this.vssProjectTextBox.Size = new System.Drawing.Size(460, 20);
+            this.vssProjectTextBox.Size = new System.Drawing.Size(570, 20);
             this.vssProjectTextBox.TabIndex = 3;
             // 
             // vssDirTextBox
@@ -148,7 +147,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.vssDirTextBox.Location = new System.Drawing.Point(94, 19);
             this.vssDirTextBox.Name = "vssDirTextBox";
-            this.vssDirTextBox.Size = new System.Drawing.Size(460, 20);
+            this.vssDirTextBox.Size = new System.Drawing.Size(570, 20);
             this.vssDirTextBox.TabIndex = 1;
             // 
             // vssProjectLabel
@@ -172,7 +171,7 @@
             // goButton
             // 
             this.goButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.goButton.Location = new System.Drawing.Point(416, 381);
+            this.goButton.Location = new System.Drawing.Point(526, 381);
             this.goButton.Name = "goButton";
             this.goButton.Size = new System.Drawing.Size(75, 23);
             this.goButton.TabIndex = 3;
@@ -192,16 +191,16 @@
             this.revisionLabel,
             this.changeLabel,
             this.timeLabel});
-            this.statusStrip.Location = new System.Drawing.Point(0, 407);
+            this.statusStrip.Location = new System.Drawing.Point(0, 502);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(584, 22);
+            this.statusStrip.Size = new System.Drawing.Size(694, 22);
             this.statusStrip.TabIndex = 5;
             this.statusStrip.Text = "statusStrip1";
             // 
             // statusLabel
             // 
             this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(284, 17);
+            this.statusLabel.Size = new System.Drawing.Size(394, 17);
             this.statusLabel.Spring = true;
             this.statusLabel.Text = "Idle";
             this.statusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -248,10 +247,21 @@
             this.outputGroupBox.Controls.Add(this.logLabel);
             this.outputGroupBox.Location = new System.Drawing.Point(12, 144);
             this.outputGroupBox.Name = "outputGroupBox";
-            this.outputGroupBox.Size = new System.Drawing.Size(560, 150);
+            this.outputGroupBox.Size = new System.Drawing.Size(670, 150);
             this.outputGroupBox.TabIndex = 1;
             this.outputGroupBox.TabStop = false;
             this.outputGroupBox.Text = "Output Settings";
+            // 
+            // ignoreErrorsCheckBox
+            // 
+            this.ignoreErrorsCheckBox.AutoSize = true;
+            this.ignoreErrorsCheckBox.Location = new System.Drawing.Point(422, 123);
+            this.ignoreErrorsCheckBox.Name = "ignoreErrorsCheckBox";
+            this.ignoreErrorsCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.ignoreErrorsCheckBox.Size = new System.Drawing.Size(101, 17);
+            this.ignoreErrorsCheckBox.TabIndex = 8;
+            this.ignoreErrorsCheckBox.Text = "Ignore Git errors";
+            this.ignoreErrorsCheckBox.UseVisualStyleBackColor = true;
             // 
             // commentTextBox
             // 
@@ -259,7 +269,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.commentTextBox.Location = new System.Drawing.Point(94, 97);
             this.commentTextBox.Name = "commentTextBox";
-            this.commentTextBox.Size = new System.Drawing.Size(460, 20);
+            this.commentTextBox.Size = new System.Drawing.Size(570, 20);
             this.commentTextBox.TabIndex = 6;
             // 
             // commentLabel
@@ -267,7 +277,7 @@
             this.commentLabel.AutoSize = true;
             this.commentLabel.Location = new System.Drawing.Point(6, 100);
             this.commentLabel.Name = "commentLabel";
-            this.commentLabel.Size = new System.Drawing.Size(88, 13);
+            this.commentLabel.Size = new System.Drawing.Size(87, 13);
             this.commentLabel.TabIndex = 8;
             this.commentLabel.Text = "Default comment";
             // 
@@ -298,9 +308,9 @@
             // collapsePathCheckBox
             // 
             this.collapsePathCheckBox.AutoSize = true;
-            this.collapsePathCheckBox.Location = new System.Drawing.Point(428, 123);
+            this.collapsePathCheckBox.Location = new System.Drawing.Point(529, 123);
             this.collapsePathCheckBox.Name = "collapsePathCheckBox";
-            this.collapsePathCheckBox.Size = new System.Drawing.Size(148, 17);
+            this.collapsePathCheckBox.Size = new System.Drawing.Size(115, 17);
             this.collapsePathCheckBox.TabIndex = 8;
             this.collapsePathCheckBox.Text = "Collapse VSS Path";
             this.collapsePathCheckBox.UseVisualStyleBackColor = true;
@@ -311,7 +321,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.domainTextBox.Location = new System.Drawing.Point(94, 45);
             this.domainTextBox.Name = "domainTextBox";
-            this.domainTextBox.Size = new System.Drawing.Size(460, 20);
+            this.domainTextBox.Size = new System.Drawing.Size(570, 20);
             this.domainTextBox.TabIndex = 3;
             // 
             // domainLabel
@@ -329,7 +339,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.outDirTextBox.Location = new System.Drawing.Point(94, 19);
             this.outDirTextBox.Name = "outDirTextBox";
-            this.outDirTextBox.Size = new System.Drawing.Size(460, 20);
+            this.outDirTextBox.Size = new System.Drawing.Size(570, 20);
             this.outDirTextBox.TabIndex = 1;
             // 
             // outDirLabel
@@ -347,7 +357,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.logTextBox.Location = new System.Drawing.Point(94, 71);
             this.logTextBox.Name = "logTextBox";
-            this.logTextBox.Size = new System.Drawing.Size(460, 20);
+            this.logTextBox.Size = new System.Drawing.Size(570, 20);
             this.logTextBox.TabIndex = 5;
             // 
             // logLabel
@@ -363,7 +373,7 @@
             // 
             this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelButton.Location = new System.Drawing.Point(497, 381);
+            this.cancelButton.Location = new System.Drawing.Point(607, 381);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 4;
@@ -446,37 +456,25 @@
             this.anyCommentUpDown.Size = new System.Drawing.Size(54, 20);
             this.anyCommentUpDown.TabIndex = 1;
             // 
-            // ignoreErrorsCheckBox
-            //
-            this.ignoreErrorsCheckBox.AutoSize = true;
-            this.ignoreErrorsCheckBox.Location = new System.Drawing.Point(422, 123);
-            this.ignoreErrorsCheckBox.Name = "ignoreErrorsCheckBox";
-            this.ignoreErrorsCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.ignoreErrorsCheckBox.Size = new System.Drawing.Size(101, 17);
-            this.ignoreErrorsCheckBox.TabIndex = 8;
-            this.ignoreErrorsCheckBox.Text = "Ignore Git errors";
-            this.ignoreErrorsCheckBox.UseVisualStyleBackColor = true;
-            // 
             // MainForm
             // 
             this.AcceptButton = this.goButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cancelButton;
-            this.ClientSize = new System.Drawing.Size(584, 429);
+            this.ClientSize = new System.Drawing.Size(694, 524);
             this.Controls.Add(this.changesetGroupBox);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.outputGroupBox);
             this.Controls.Add(this.goButton);
             this.Controls.Add(this.vssGroupBox);
             this.Controls.Add(this.statusStrip);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(458, 419);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VSS2Git";
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.vssGroupBox.ResumeLayout(false);
             this.vssGroupBox.PerformLayout();
             this.statusStrip.ResumeLayout(false);
