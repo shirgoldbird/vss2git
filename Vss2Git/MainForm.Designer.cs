@@ -317,7 +317,6 @@
             this.collapsePathCheckBox.TabIndex = 8;
             this.collapsePathCheckBox.Text = "Collapse VSS Path";
             this.collapsePathCheckBox.UseVisualStyleBackColor = true;
-            this.collapsePathCheckBox.CheckedChanged += new System.EventHandler(this.collapsePathCheckBox_CheckedChanged);
             // 
             // domainTextBox
             // 
