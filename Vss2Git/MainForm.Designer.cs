@@ -171,7 +171,7 @@
             // goButton
             // 
             this.goButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.goButton.Location = new System.Drawing.Point(526, 381);
+            this.goButton.Location = new System.Drawing.Point(534, 453);
             this.goButton.Name = "goButton";
             this.goButton.Size = new System.Drawing.Size(75, 23);
             this.goButton.TabIndex = 3;
@@ -245,9 +245,9 @@
             this.outputGroupBox.Controls.Add(this.outDirLabel);
             this.outputGroupBox.Controls.Add(this.logTextBox);
             this.outputGroupBox.Controls.Add(this.logLabel);
-            this.outputGroupBox.Location = new System.Drawing.Point(12, 144);
+            this.outputGroupBox.Location = new System.Drawing.Point(12, 141);
             this.outputGroupBox.Name = "outputGroupBox";
-            this.outputGroupBox.Size = new System.Drawing.Size(670, 150);
+            this.outputGroupBox.Size = new System.Drawing.Size(670, 192);
             this.outputGroupBox.TabIndex = 1;
             this.outputGroupBox.TabStop = false;
             this.outputGroupBox.Text = "Output Settings";
@@ -255,7 +255,7 @@
             // ignoreErrorsCheckBox
             // 
             this.ignoreErrorsCheckBox.AutoSize = true;
-            this.ignoreErrorsCheckBox.Location = new System.Drawing.Point(422, 123);
+            this.ignoreErrorsCheckBox.Location = new System.Drawing.Point(422, 155);
             this.ignoreErrorsCheckBox.Name = "ignoreErrorsCheckBox";
             this.ignoreErrorsCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.ignoreErrorsCheckBox.Size = new System.Drawing.Size(101, 17);
@@ -267,7 +267,7 @@
             // 
             this.commentTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.commentTextBox.Location = new System.Drawing.Point(94, 97);
+            this.commentTextBox.Location = new System.Drawing.Point(94, 120);
             this.commentTextBox.Name = "commentTextBox";
             this.commentTextBox.Size = new System.Drawing.Size(570, 20);
             this.commentTextBox.TabIndex = 6;
@@ -275,7 +275,7 @@
             // commentLabel
             // 
             this.commentLabel.AutoSize = true;
-            this.commentLabel.Location = new System.Drawing.Point(6, 100);
+            this.commentLabel.Location = new System.Drawing.Point(6, 123);
             this.commentLabel.Name = "commentLabel";
             this.commentLabel.Size = new System.Drawing.Size(87, 13);
             this.commentLabel.TabIndex = 8;
@@ -286,7 +286,7 @@
             this.forceAnnotatedCheckBox.AutoSize = true;
             this.forceAnnotatedCheckBox.Checked = true;
             this.forceAnnotatedCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.forceAnnotatedCheckBox.Location = new System.Drawing.Point(224, 123);
+            this.forceAnnotatedCheckBox.Location = new System.Drawing.Point(224, 155);
             this.forceAnnotatedCheckBox.Name = "forceAnnotatedCheckBox";
             this.forceAnnotatedCheckBox.Size = new System.Drawing.Size(191, 17);
             this.forceAnnotatedCheckBox.TabIndex = 7;
@@ -298,7 +298,7 @@
             this.transcodeCheckBox.AutoSize = true;
             this.transcodeCheckBox.Checked = true;
             this.transcodeCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.transcodeCheckBox.Location = new System.Drawing.Point(9, 123);
+            this.transcodeCheckBox.Location = new System.Drawing.Point(9, 155);
             this.transcodeCheckBox.Name = "transcodeCheckBox";
             this.transcodeCheckBox.Size = new System.Drawing.Size(209, 17);
             this.transcodeCheckBox.TabIndex = 6;
@@ -308,18 +308,22 @@
             // collapsePathCheckBox
             // 
             this.collapsePathCheckBox.AutoSize = true;
-            this.collapsePathCheckBox.Location = new System.Drawing.Point(529, 123);
+            this.collapsePathCheckBox.Checked = true;
+            this.collapsePathCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.collapsePathCheckBox.Enabled = false;
+            this.collapsePathCheckBox.Location = new System.Drawing.Point(9, 45);
             this.collapsePathCheckBox.Name = "collapsePathCheckBox";
             this.collapsePathCheckBox.Size = new System.Drawing.Size(115, 17);
             this.collapsePathCheckBox.TabIndex = 8;
             this.collapsePathCheckBox.Text = "Collapse VSS Path";
             this.collapsePathCheckBox.UseVisualStyleBackColor = true;
+            this.collapsePathCheckBox.CheckedChanged += new System.EventHandler(this.collapsePathCheckBox_CheckedChanged);
             // 
             // domainTextBox
             // 
             this.domainTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.domainTextBox.Location = new System.Drawing.Point(94, 45);
+            this.domainTextBox.Location = new System.Drawing.Point(94, 68);
             this.domainTextBox.Name = "domainTextBox";
             this.domainTextBox.Size = new System.Drawing.Size(570, 20);
             this.domainTextBox.TabIndex = 3;
@@ -327,7 +331,7 @@
             // domainLabel
             // 
             this.domainLabel.AutoSize = true;
-            this.domainLabel.Location = new System.Drawing.Point(6, 48);
+            this.domainLabel.Location = new System.Drawing.Point(6, 71);
             this.domainLabel.Name = "domainLabel";
             this.domainLabel.Size = new System.Drawing.Size(69, 13);
             this.domainLabel.TabIndex = 2;
@@ -355,7 +359,7 @@
             // 
             this.logTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.logTextBox.Location = new System.Drawing.Point(94, 71);
+            this.logTextBox.Location = new System.Drawing.Point(94, 94);
             this.logTextBox.Name = "logTextBox";
             this.logTextBox.Size = new System.Drawing.Size(570, 20);
             this.logTextBox.TabIndex = 5;
@@ -363,7 +367,7 @@
             // logLabel
             // 
             this.logLabel.AutoSize = true;
-            this.logLabel.Location = new System.Drawing.Point(6, 74);
+            this.logLabel.Location = new System.Drawing.Point(6, 97);
             this.logLabel.Name = "logLabel";
             this.logLabel.Size = new System.Drawing.Size(41, 13);
             this.logLabel.TabIndex = 4;
@@ -373,7 +377,7 @@
             // 
             this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelButton.Location = new System.Drawing.Point(607, 381);
+            this.cancelButton.Location = new System.Drawing.Point(615, 453);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 4;
@@ -389,7 +393,7 @@
             this.changesetGroupBox.Controls.Add(this.label2);
             this.changesetGroupBox.Controls.Add(this.label1);
             this.changesetGroupBox.Controls.Add(this.anyCommentUpDown);
-            this.changesetGroupBox.Location = new System.Drawing.Point(12, 300);
+            this.changesetGroupBox.Location = new System.Drawing.Point(12, 342);
             this.changesetGroupBox.Name = "changesetGroupBox";
             this.changesetGroupBox.Size = new System.Drawing.Size(560, 75);
             this.changesetGroupBox.TabIndex = 2;
