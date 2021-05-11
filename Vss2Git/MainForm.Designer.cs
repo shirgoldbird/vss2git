@@ -308,9 +308,7 @@
             // collapsePathCheckBox
             // 
             this.collapsePathCheckBox.AutoSize = true;
-            this.collapsePathCheckBox.Checked = true;
-            this.collapsePathCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.collapsePathCheckBox.Enabled = false;
+            this.collapsePathCheckBox.Enabled = true;
             this.collapsePathCheckBox.Location = new System.Drawing.Point(9, 45);
             this.collapsePathCheckBox.Name = "collapsePathCheckBox";
             this.collapsePathCheckBox.Size = new System.Drawing.Size(115, 17);
