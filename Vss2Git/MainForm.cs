@@ -15,6 +15,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
@@ -74,7 +75,15 @@ namespace Hpdi.Vss2Git
                 df.Encoding = encoding;
                 var db = df.Open();
 
-                var path = vssProjectTextBox.Text;
+                var path = vssBasePath.Text;
+
+                if (!vssBasePath.Text.EndsWith("/"))
+                {
+                    path += '/';
+                }
+
+                path +=  projectName.Text;
+                
                 VssItem item;
                 try
                 {
@@ -126,7 +135,7 @@ namespace Hpdi.Vss2Git
                     }
                     gitExporter.IgnoreErrors = ignoreErrorsCheckBox.Checked;
                     gitExporter.CollapsePath = collapsePathCheckBox.Checked;
-                    gitExporter.ExportToGit(outDirTextBox.Text);
+                    gitExporter.ExportToGit(Path.Combine(outDirTextBox.Text, projectName.Text));
                 }
 
                 workQueue.Idle += delegate
@@ -242,8 +251,9 @@ namespace Hpdi.Vss2Git
         private void ReadSettings()
         {
             var settings = Properties.Settings.Default;
+            projectName.Text = settings.ProjectName;
             vssDirTextBox.Text = settings.VssDirectory;
-            vssProjectTextBox.Text = settings.VssProject;
+            vssBasePath.Text = settings.VssBasePath;
             excludeTextBox.Text = settings.VssExcludePaths;
             outDirTextBox.Text = settings.GitDirectory;
             domainTextBox.Text = settings.DefaultEmailDomain;
@@ -259,8 +269,9 @@ namespace Hpdi.Vss2Git
         private void WriteSettings()
         {
             var settings = Properties.Settings.Default;
+            settings.ProjectName = projectName.Text;
             settings.VssDirectory = vssDirTextBox.Text;
-            settings.VssProject = vssProjectTextBox.Text;
+            settings.VssBasePath = vssBasePath.Text;
             settings.VssExcludePaths = excludeTextBox.Text;
             settings.GitDirectory = outDirTextBox.Text;
             settings.DefaultEmailDomain = domainTextBox.Text;

@@ -5,7 +5,7 @@
     <Setting Name="VssDirectory" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="VssProject" Type="System.String" Scope="User">
+    <Setting Name="VssBasePath" Type="System.String" Scope="User">
       <Value Profile="(Default)">$</Value>
     </Setting>
     <Setting Name="VssExcludePaths" Type="System.String" Scope="User">
@@ -37,6 +37,9 @@
     </Setting>
     <Setting Name="CollapsePath" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ProjectName" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>

@@ -34,7 +34,7 @@
             this.encodingComboBox = new System.Windows.Forms.ComboBox();
             this.excludeTextBox = new System.Windows.Forms.TextBox();
             this.excludeLabel = new System.Windows.Forms.Label();
-            this.vssProjectTextBox = new System.Windows.Forms.TextBox();
+            this.vssBasePath = new System.Windows.Forms.TextBox();
             this.vssDirTextBox = new System.Windows.Forms.TextBox();
             this.vssProjectLabel = new System.Windows.Forms.Label();
             this.vssDirLabel = new System.Windows.Forms.Label();
@@ -67,6 +67,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.anyCommentUpDown = new System.Windows.Forms.NumericUpDown();
+            this.projectName = new System.Windows.Forms.TextBox();
+            this.projectNameLabel = new System.Windows.Forms.Label();
             this.vssGroupBox.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.outputGroupBox.SuspendLayout();
@@ -83,11 +85,11 @@
             this.vssGroupBox.Controls.Add(this.encodingComboBox);
             this.vssGroupBox.Controls.Add(this.excludeTextBox);
             this.vssGroupBox.Controls.Add(this.excludeLabel);
-            this.vssGroupBox.Controls.Add(this.vssProjectTextBox);
+            this.vssGroupBox.Controls.Add(this.vssBasePath);
             this.vssGroupBox.Controls.Add(this.vssDirTextBox);
             this.vssGroupBox.Controls.Add(this.vssProjectLabel);
             this.vssGroupBox.Controls.Add(this.vssDirLabel);
-            this.vssGroupBox.Location = new System.Drawing.Point(12, 12);
+            this.vssGroupBox.Location = new System.Drawing.Point(12, 34);
             this.vssGroupBox.Name = "vssGroupBox";
             this.vssGroupBox.Size = new System.Drawing.Size(670, 126);
             this.vssGroupBox.TabIndex = 0;
@@ -132,14 +134,14 @@
             this.excludeLabel.TabIndex = 4;
             this.excludeLabel.Text = "Exclude files";
             // 
-            // vssProjectTextBox
+            // vssBasePath
             // 
-            this.vssProjectTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.vssBasePath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.vssProjectTextBox.Location = new System.Drawing.Point(94, 45);
-            this.vssProjectTextBox.Name = "vssProjectTextBox";
-            this.vssProjectTextBox.Size = new System.Drawing.Size(570, 20);
-            this.vssProjectTextBox.TabIndex = 3;
+            this.vssBasePath.Location = new System.Drawing.Point(94, 45);
+            this.vssBasePath.Name = "vssBasePath";
+            this.vssBasePath.Size = new System.Drawing.Size(570, 20);
+            this.vssBasePath.TabIndex = 3;
             // 
             // vssDirTextBox
             // 
@@ -155,9 +157,9 @@
             this.vssProjectLabel.AutoSize = true;
             this.vssProjectLabel.Location = new System.Drawing.Point(6, 48);
             this.vssProjectLabel.Name = "vssProjectLabel";
-            this.vssProjectLabel.Size = new System.Drawing.Size(40, 13);
+            this.vssProjectLabel.Size = new System.Drawing.Size(56, 13);
             this.vssProjectLabel.TabIndex = 2;
-            this.vssProjectLabel.Text = "Project";
+            this.vssProjectLabel.Text = "Base Path";
             // 
             // vssDirLabel
             // 
@@ -245,7 +247,7 @@
             this.outputGroupBox.Controls.Add(this.outDirLabel);
             this.outputGroupBox.Controls.Add(this.logTextBox);
             this.outputGroupBox.Controls.Add(this.logLabel);
-            this.outputGroupBox.Location = new System.Drawing.Point(12, 141);
+            this.outputGroupBox.Location = new System.Drawing.Point(12, 168);
             this.outputGroupBox.Name = "outputGroupBox";
             this.outputGroupBox.Size = new System.Drawing.Size(670, 192);
             this.outputGroupBox.TabIndex = 1;
@@ -308,7 +310,6 @@
             // collapsePathCheckBox
             // 
             this.collapsePathCheckBox.AutoSize = true;
-            this.collapsePathCheckBox.Enabled = true;
             this.collapsePathCheckBox.Location = new System.Drawing.Point(9, 45);
             this.collapsePathCheckBox.Name = "collapsePathCheckBox";
             this.collapsePathCheckBox.Size = new System.Drawing.Size(115, 17);
@@ -390,7 +391,7 @@
             this.changesetGroupBox.Controls.Add(this.label2);
             this.changesetGroupBox.Controls.Add(this.label1);
             this.changesetGroupBox.Controls.Add(this.anyCommentUpDown);
-            this.changesetGroupBox.Location = new System.Drawing.Point(12, 342);
+            this.changesetGroupBox.Location = new System.Drawing.Point(12, 369);
             this.changesetGroupBox.Name = "changesetGroupBox";
             this.changesetGroupBox.Size = new System.Drawing.Size(560, 75);
             this.changesetGroupBox.TabIndex = 2;
@@ -457,6 +458,24 @@
             this.anyCommentUpDown.Size = new System.Drawing.Size(54, 20);
             this.anyCommentUpDown.TabIndex = 1;
             // 
+            // projectName
+            // 
+            this.projectName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.projectName.Location = new System.Drawing.Point(100, 6);
+            this.projectName.Name = "projectName";
+            this.projectName.Size = new System.Drawing.Size(570, 20);
+            this.projectName.TabIndex = 9;
+            // 
+            // projectNameLabel
+            // 
+            this.projectNameLabel.AutoSize = true;
+            this.projectNameLabel.Location = new System.Drawing.Point(12, 9);
+            this.projectNameLabel.Name = "projectNameLabel";
+            this.projectNameLabel.Size = new System.Drawing.Size(71, 13);
+            this.projectNameLabel.TabIndex = 8;
+            this.projectNameLabel.Text = "Project Name";
+            // 
             // MainForm
             // 
             this.AcceptButton = this.goButton;
@@ -464,7 +483,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(694, 524);
+            this.Controls.Add(this.projectName);
             this.Controls.Add(this.changesetGroupBox);
+            this.Controls.Add(this.projectNameLabel);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.outputGroupBox);
             this.Controls.Add(this.goButton);
@@ -494,7 +515,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox vssGroupBox;
-        private System.Windows.Forms.TextBox vssProjectTextBox;
+        private System.Windows.Forms.TextBox vssBasePath;
         private System.Windows.Forms.TextBox vssDirTextBox;
         private System.Windows.Forms.Label vssProjectLabel;
         private System.Windows.Forms.Label vssDirLabel;
@@ -531,6 +552,8 @@
         private System.Windows.Forms.TextBox commentTextBox;
         private System.Windows.Forms.Label commentLabel;
         private System.Windows.Forms.CheckBox collapsePathCheckBox;
+        private System.Windows.Forms.TextBox projectName;
+        private System.Windows.Forms.Label projectNameLabel;
     }
 }
 
