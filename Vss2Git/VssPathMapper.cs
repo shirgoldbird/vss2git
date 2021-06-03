@@ -273,7 +273,7 @@ namespace Hpdi.Vss2Git
         {
             get { return projects; }
         }
-        // Shir: IS THIS WHY?
+
         private int version = 1;
         public int Version
         {
