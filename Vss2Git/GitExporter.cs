@@ -585,6 +585,29 @@ namespace Hpdi.Vss2Git
         private bool CommitChangeset(GitWrapper git, Changeset changeset)
         {
             var result = false;
+
+            // build a commit containing the information from branching/sharing if we don't already have one
+            if (changeset.Comment == null)
+            {
+                foreach (var rev in changeset.Revisions)
+                {
+                    if (rev.Action.Type == VssActionType.Share)
+                    {
+                        var shareAction = (VssShareAction)rev.Action;
+                        if (shareAction.OriginalProject != null)
+                        {
+                            // initialize comment
+                            if (changeset.Comment == null)
+                            {
+                                changeset.Comment = "Shared files from "
+                                    + shareAction.OriginalProject;
+                            }
+                        }
+                        changeset.Comment += "\n" + rev.Action.ToString();
+                    }
+                }
+            }           
+
             AbortRetryIgnore(delegate
             {
                 result = git.AddAll() &&

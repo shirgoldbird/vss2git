@@ -273,7 +273,7 @@ namespace Hpdi.Vss2Git
         {
             get { return projects; }
         }
-
+        // Shir: IS THIS WHY?
         private int version = 1;
         public int Version
         {
@@ -514,7 +514,9 @@ namespace Hpdi.Vss2Git
             parentInfo.AddItem(newFile);
 
             // retain version number from old file
-            newFile.Version = oldFile.Version;
+            // Shir: this doesn't work, oldFile.version is always (?) set to 1 because we cannot get the full history of the file from the old project
+            // however, the newFile's version is already correctly set to the most recent one, which will enable us to get the latest data
+            //newFile.Version = oldFile.Version;
 
             return newFile;
         }
@@ -572,6 +574,8 @@ namespace Hpdi.Vss2Git
 
         private VssFileInfo GetOrCreateFile(VssItemName name)
         {
+            // if we don't already have information about this file in our fileInfos array
+            // then add it
             VssFileInfo fileInfo;
             if (!fileInfos.TryGetValue(name.PhysicalName, out fileInfo))
             {
